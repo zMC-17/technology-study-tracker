@@ -1,0 +1,62 @@
+/* src/components/ProgressHeader.css */
+.progressHeader {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.progressHeader h1 {
+    color: #2d3748;
+    margin: 0 0 16px 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.progressHeader p {
+    color: #4a5568;
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+.progress-bar-container {
+    background: #f7fafc;
+    border-radius: 25px;
+    height: 30px;
+    margin: 20px 0;
+    overflow: hidden;
+    border: 2px solid #e2e8f0;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 25px;
+    transition: width 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px; /* Чтобы проценты были видны даже при малом прогрессе */
+}
+
+/* Цвета прогресс-бара */
+.progress-bar[data-color="red"] {
+    background: linear-gradient(90deg, #fc8181, #fed7d7);
+}
+
+.progress-bar[data-color="yellow"] {
+    background: linear-gradient(90deg, #f6e05e, #faf089);
+}
+
+.progress-bar[data-color="green"] {
+    background: linear-gradient(90deg, #68d391, #9ae6b4);
+}
+
+.progress-text {
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}

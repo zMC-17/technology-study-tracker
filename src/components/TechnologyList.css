@@ -1,0 +1,15 @@
+.technology-list {
+    margin: 20px 0;
+}
+
+.technology-list h2 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.technologies-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

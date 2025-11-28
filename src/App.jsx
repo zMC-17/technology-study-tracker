@@ -1,24 +1,21 @@
 // src/App.jsx
 import './App.css';
-import Greeting from './Greeting';
-import UserCard from './UserCard';
-import TaskList from './TaskList';
+import TechnologyList from './components/TechnologyList';
+import ProgressHeader from './components/ProgressHeader';
 
+const technologies = [
+    {id: 1, title: 'React Components', description: 'Изучение базовых компонентов', status: 'completed'},
+    {id: 2, title: 'JSX Syntax', description: 'Освоение синтаксиса JSX', status:'in-progress'},
+    {id: 3, title: 'State Management', description: 'Работа с состоянием компонентов', status: 'not-started' }
+];
 
 function App() {
+
+
     return (
         <div className="App">
-            <Greeting />
-
-            <UserCard
-                name="Иван Иванов"
-                role="Администратор"
-                avatarUrl="https://encrypted-tbn0.gstatic.com/images?
-q=tbn:ANd9GcRfVMhpKmVy_-iwfRLAiNiaDslMa-2oEz7KTw&s"
-                isOnline={true}
-            />
-
-            <TaskList />
+            <ProgressHeader technologies={technologies} />
+            <TechnologyList technologies={technologies} />
         </div>
     );
 }
