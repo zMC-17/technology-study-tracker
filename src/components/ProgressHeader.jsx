@@ -8,7 +8,8 @@ function ProgressHeader({ technologies }) {
 
     const totalAmount = technologies.length;
     const studiedAmount = technologies.filter(tech => tech.status === 'completed').length;
-
+    const notStartedAmount = technologies.filter(tech => tech.status === 'not-started').length;
+    const inProgressAmount = technologies.filter(tech => tech.status === 'in-progress').length;
     const studiedPercent = totalAmount > 0 ? Math.round((studiedAmount / totalAmount) * 100) : 0;
 
     const getProgressBarColor = () => {
@@ -26,6 +27,8 @@ function ProgressHeader({ technologies }) {
             <h1>Общий прогресс</h1>
             <p>Всего техноллогий: {totalAmount}</p>
             <p>Кол-во изученных технологий: {studiedAmount}</p>
+            <p>Кол-во технологий в процессе: {inProgressAmount}</p>
+            <p>Кол-во неизученных технологий: {notStartedAmount}</p>
             <div className="progress-bar-container">
                 <div
                     className="progress-bar"
@@ -33,6 +36,8 @@ function ProgressHeader({ technologies }) {
                     style={{ width: `${studiedPercent}%` }}
                 >
                     <span className="progress-text">{studiedPercent}%</span>
+
+                    <p></p>
                 </div>
             </div>
         </div>
