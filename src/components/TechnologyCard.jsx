@@ -1,7 +1,8 @@
 // src/components/TechnologyCard.jsx
-import './TechnologyCard.css';
+import './styles/TechnologyCard.css';
+import TechnologyNotes from './TechnologyNotes';
 
-function TechnologyCard({id, title, description, status, changeStatus}) {
+function TechnologyCard({id, title, description, status, changeStatus, notes, onNotesChange}) {
 
     function getStatusText (status) {
         switch (status) {
@@ -39,6 +40,7 @@ function TechnologyCard({id, title, description, status, changeStatus}) {
                 <span className="statusIcon">{getStatusIcon(status)}</span>
                 {getStatusText(status)}
             </div>
+            <TechnologyNotes notes={notes} onNotesChange={onNotesChange} techId={id}/>
         </div>
     )
 }

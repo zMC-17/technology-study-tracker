@@ -1,17 +1,17 @@
 // src/components/QuickActions.jsx
-import './QuickActions.css'
+import './styles/QuickActions.css'
 
 
-function QuickActions ({MakeAllCompleted, ResetAllStatuses, ChoiceRandTech}) {
+function QuickActions ({makeAllCompleted, resetAllStatuses, choiceRandTech}) {
 
     const onMakeAllCompleted = () => {
-        MakeAllCompleted()
+        makeAllCompleted()
     }
     const onResetAllStatuses = () => {
-        ResetAllStatuses()
+        resetAllStatuses()
     }
     const onChoiceRandTech = () => {
-        ChoiceRandTech()
+        choiceRandTech()
     }
 
 

@@ -1,6 +1,6 @@
 // src/components/ProgressHeader.jsx
 
-import './ProgressHeader.css'
+import './styles/ProgressHeader.css'
 
 function ProgressHeader({ technologies }) {
 

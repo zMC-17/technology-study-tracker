@@ -1,11 +1,11 @@
 // src/components/TechnologyList.jsx
-import './TechnologyList.css';
+import './styles/TechnologyList.css';
 import Filter from './Filter';
 
 import TechnologyCard from './TechnologyCard';
 
 
-function TechnologyList({ technologies, changeStatus, currentFilter, changeFilter}) {
+function TechnologyList({ technologies, changeStatus, currentFilter, changeFilter, updateTechnologyNotes}) {
 
     const filtredTechs = currentFilter === 'all'
     ? technologies
@@ -27,6 +27,8 @@ function TechnologyList({ technologies, changeStatus, currentFilter, changeFilte
                         description={technology.description}
                         status={technology.status}
                         changeStatus={changeStatus}
+                        notes={technology.notes}
+                        onNotesChange={updateTechnologyNotes}
                     />
                 ))}
             </div>

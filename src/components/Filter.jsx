@@ -1,6 +1,6 @@
 // .src/components/Filter.jsx
 
-import './Filter.css'
+import './styles/Filter.css'
 
 function Filter ({currentFilter, changeFilter}) {
 
