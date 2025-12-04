@@ -1,74 +1,67 @@
-.quickActionsContainer {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 40px 0;
-    padding: 24px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 16px;
-    box-shadow:
-        0 4px 6px rgba(0, 0, 0, 0.05),
-        0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.quickActionButton {
-    padding: 14px 28px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
+/* Минималистичный стиль для QuickActions */
+.quick-actions {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 10px;
-    font-size: 15px;
-    font-weight: 600;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.quick-actions h3 {
+    margin: 0 0 15px 0;
+    color: #1e293b;
+    font-size: 1.1rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.action-buttons button {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: white;
+    color: #475569;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 240px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
+    transition: all 0.2s;
 }
 
-.quickActionButton:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+.action-buttons button:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
 }
 
-.quickActionButton:active {
-    transform: translateY(-1px);
+.btn-success:hover {
+    background: #dcfce7;
+    color: #166534;
+    border-color: #86efac;
 }
 
-.quickActionButton:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
-    transition: 0.5s;
+.btn-warning:hover {
+    background: #fef3c7;
+    color: #92400e;
+    border-color: #fbbf24;
 }
 
-.quickActionButton:hover:before {
-    left: 100%;
+.btn-info:hover {
+    background: #dbeafe;
+    color: #1e40af;
+    border-color: #93c5fd;
 }
 
-/* Для мобильных устройств */
-@media (max-width: 768px) {
-    .quickActionsContainer {
+/* Мобильная адаптация */
+@media (max-width: 640px) {
+    .action-buttons {
         flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-        padding: 16px;
     }
 
-    .quickActionButton {
-        min-width: auto;
+    .action-buttons button {
         width: 100%;
     }
 }

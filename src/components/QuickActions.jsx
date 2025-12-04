@@ -1,27 +1,44 @@
-// src/components/QuickActions.jsx
+// QuickActions.jsx
+import { useState } from 'react';
+import Modal from './Modal';
 import './styles/QuickActions.css'
-
-
-function QuickActions ({makeAllCompleted, resetAllStatuses, choiceRandTech}) {
-
-    const onMakeAllCompleted = () => {
-        makeAllCompleted()
-    }
-    const onResetAllStatuses = () => {
-        resetAllStatuses()
-    }
-    const onChoiceRandTech = () => {
-        choiceRandTech()
-    }
-
-
+function QuickActions({ onMarkAllCompleted, onResetAll, technologies }) {
+    const [showExportModal, setShowExportModal] = useState(false);
+    const handleExport = () => {
+        const data = {
+            exportedAt: new Date().toISOString(),
+            technologies: technologies
+        };
+        const dataStr = JSON.stringify(data, null, 2);
+        // Здесь можно добавить логику для скачивания файла
+        console.log('Данные для экспорта:', dataStr);
+        setShowExportModal(true);
+    };
     return (
-        <div className="quickActionsContainer">
-            <button className="quickActionButton" type="button" onClick={onMakeAllCompleted} >Отметить все как выполненные</button>
-            <button className="quickActionButton" type="button" onClick={onResetAllStatuses}>Сбросить все статусы</button>
-            <button className="quickActionButton" type="button" onClick={onChoiceRandTech}>Случайный выбор следующей технологии</button>
+        <div className="quick-actions">
+            <h3>Быстрые действия</h3>
+            <div className="action-buttons">
+                <button onClick={onMarkAllCompleted} className="btn btn-success">
+                    ✅ Отметить все как выполненные
+                </button>
+                <button onClick={onResetAll} className="btn btn-warning">
+                    🔄 Сбросить все статусы
+                </button><button onClick={handleExport} className="btn btn-info">
+                    📤 Экспорт данных
+                </button>
+            </div>
+            <Modal
+                isOpen={showExportModal}
+                onClose={() => setShowExportModal(false)}
+                title="Экспорт данных"
+            >
+                <p>Данные успешно подготовлены для экспорта!</p>
+                <p>Проверьте консоль разработчика для просмотра данных.</p>
+                <button onClick={() => setShowExportModal(false)}>
+                    Закрыть
+                </button>
+            </Modal>
         </div>
-    )
+    );
 }
-
-export default QuickActions
+export default QuickActions;
