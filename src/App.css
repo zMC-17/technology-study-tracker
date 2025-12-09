@@ -1,320 +1,864 @@
-/* Общие стили */
+/* Основные стили */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f7fa;
+  color: #333;
 }
 
 .app {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Навигация */
-.main-navigation {
-    background: #2c3e50;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Хедер */
+.app-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.nav-brand a {
-    color: white;
-    text-decoration: none;
+.header-content {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-.nav-brand h2 {
-    margin: 0;
-    font-size: 1.5rem;
+.app-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    margin: 0;
+.header-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.nav-menu a {
-    color: #ecf0f1;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background 0.3s;
+.header-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.nav-menu a:hover {
-    background: rgba(255, 255, 255, 0.1);
+.header-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.nav-menu a.active {
-    background: #3498db;
-    font-weight: bold;
+.refresh-button {
+  background-color: white;
+  color: #667eea;
+}
+
+.refresh-button:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.add-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.add-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }
 
 /* Основной контент */
-.main-content {
-    flex: 1;
-    padding: 2rem;
-    background: #f8f9fa;
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-/* Страницы */
-.page {
-    max-width: 1200px;
-    margin: 0 auto;
+.main-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
 }
 
-.page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+/* Сайдбар */
+.sidebar {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
 }
 
-.page-header h1 {
-    color: #2c3e50;
-    margin: 0;
+.sidebar-section {
+  margin-bottom: 2rem;
 }
 
-/* Кнопки */
-.btn {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s;
+.sidebar-section:last-child {
+  margin-bottom: 0;
 }
 
-.btn-primary {
-    background: #3498db;
-    color: white;
+.sidebar-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #667eea;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f2f5;
 }
 
-.btn-primary:hover {
-    background: #2980b9;
+.stats-info p, .about-info p {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  color: #666;
 }
 
-.btn-link {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: 500;
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.btn-link:hover {
-    text-decoration: underline;
+.quick-button {
+  padding: 0.75rem 1rem;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  color: #495057;
 }
 
-.back-link {
-    color: #7f8c8d;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+.quick-button:hover {
+  background-color: #e9ecef;
+  transform: translateX(4px);
 }
 
-.back-link:hover {
-    color: #3498db;
+.api-note {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Контент */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Стили для TechnologyList */
+.technology-list.loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.technology-list.error {
+  text-align: center;
+  padding: 3rem;
+  color: #e74c3c;
+}
+
+.retry-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.2s;
+}
+
+.retry-button:hover {
+  background-color: #2980b9;
+}
+
+/* Хедер списка */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f2f5;
+}
+
+.header-left h2 {
+  margin-bottom: 0.5rem;
+}
+
+.tech-count {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Управление списком */
+.list-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.category-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.category-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.category-button.active {
+  background-color: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.category-button:hover:not(.active) {
+  background-color: #f8f9fa;
+}
+
+/* Статистика */
+.technologies-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.stat-card:nth-child(2) {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.stat-card:nth-child(3) {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 /* Сетка технологий */
 .technologies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
-.technology-item {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+/* Карточка технологии */
+.technology-card {
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: white;
 }
 
-.technology-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+.technology-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.technology-item h3 {
-    margin-top: 0;
-    color: #2c3e50;
+.technology-card.expanded {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.technology-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
+.card-header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
 }
 
-/* Статусы */
-.status {
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 500;
+.card-title-section {
+  flex: 1;
 }
 
-.status-not-started {
-    background: #e74c3c;
-    color: white;
+.tech-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+  color: #333;
 }
 
-.status-in-progress {
-    background: #f39c12;
-    color: white;
+.tech-name {
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.status-completed {
-    background: #27ae60;
-    color: white;
+.card-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
 }
 
-/* Детали технологии */
-.technology-detail {
-    background: white;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.category-badge, .difficulty-badge, .stars-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
-.detail-section {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #eee;
+.stars-badge {
+  background-color: #fff3cd;
+  color: #856404;
 }
 
-.detail-section:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
+.expand-icon {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.detail-section h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
+/* Контент карточки */
+.card-content {
+  padding: 1.5rem;
 }
 
-.status-buttons {
-    display: flex;
-    gap: 1rem;
+.tech-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: #555;
 }
 
-.status-buttons button {
-    padding: 0.75rem 1.5rem;
-    border: 2px solid #ddd;
-    background: white;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s;
+.tech-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
 }
 
-.status-buttons button.active {
-    border-color: #3498db;
-    background: #ebf5fb;
-    color: #3498db;
+.detail-item {
+  display: flex;
+  flex-direction: column;
 }
 
-.status-buttons button:hover:not(.active) {
-    border-color: #3498db;
+.detail-label {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.25rem;
 }
 
-/* Форма добавления */
-.add-tech-form {
-    background: white;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.detail-value {
+  font-weight: 600;
+  color: #333;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+/* Ресурсы */
+.tech-resources {
+  margin-bottom: 1.5rem;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: #2c3e50;
+.resources-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: inherit;
+.resources-header h4 {
+  margin: 0;
+  color: #333;
 }
 
-.form-group textarea {
-    resize: vertical;
+.resources-list {
+  list-style: none;
+  padding-left: 0;
 }
 
-.form-actions {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+.resources-list li {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  transition: background-color 0.2s;
 }
 
-/* Пустое состояние */
-.empty-state {
-    text-align: center;
-    padding: 3rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.resources-list li:hover {
+  background-color: #e9ecef;
 }
 
-.empty-state p {
-    color: #7f8c8d;
-    margin-bottom: 1.5rem;
+.resource-link {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.resource-link:hover {
+  text-decoration: underline;
+}
+
+/* Действия карточки */
+.card-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.github-button, .save-button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.github-button {
+  background-color: #24292e;
+  color: white;
+}
+
+.github-button:hover {
+  background-color: #1a1e22;
+}
+
+.save-button {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #dee2e6;
+}
+
+.save-button:hover {
+  background-color: #e9ecef;
+}
+
+/* Поиск */
+.technology-search {
+  margin-bottom: 2rem;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-input-wrapper {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  padding-right: 3rem;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-loading {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mini-spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+.clear-search-button {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.clear-search-button:hover {
+  color: #333;
+}
+
+.search-hints {
+  margin-top: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.search-tips {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.tip-title {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.search-tag {
+  padding: 0.25rem 0.75rem;
+  background-color: #f0f2f5;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #495057;
+  transition: all 0.2s;
+}
+
+.search-tag:hover {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+/* Roadmap Importer */
+.roadmap-importer {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.importer-description {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.roadmaps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.roadmap-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-4px);
+}
+
+.roadmap-card h4 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.roadmap-tech-count {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.roadmap-tech-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.roadmap-tech-list li {
+  padding: 0.25rem 0;
+  color: #555;
+}
+
+.import-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.import-button:hover:not(:disabled) {
+  background-color: #5a6fd8;
+}
+
+.import-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.import-button.importing {
+  background-color: #f39c12;
+}
+
+.import-status {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.import-status.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.import-status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.import-note {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Ошибки приложения */
+.app-error {
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.error-content {
+  text-align: center;
+}
+
+.error-content h3 {
+  color: #856404;
+  margin-bottom: 1rem;
+}
+
+.error-content p {
+  color: #856404;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.error-retry-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #856404;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.error-retry-button:hover {
+  background-color: #6c4f03;
+}
+
+/* Футер */
+.app-footer {
+  background-color: #24292e;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-content p {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: white;
 }
 
 /* Адаптивность */
+@media (max-width: 1024px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
+
 @media (max-width: 768px) {
-    .main-navigation {
-        flex-direction: column;
-        gap: 1rem;
-    }
+  .app-header {
+    padding: 1.5rem;
+  }
 
-    .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .app-header h1 {
+    font-size: 2rem;
+  }
 
-    .page-header {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
+  .header-actions {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .status-buttons {
-        flex-direction: column;
-    }
+  .header-button {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
 
-    .form-actions {
-        flex-direction: column;
-    }
+  .list-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-control {
+    width: 100%;
+  }
+
+  .technologies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmaps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-main {
+    padding: 1rem;
+  }
+
+  .content-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-badges {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .technologies-stats {
+    grid-template-columns: 1fr;
+  }
 }
